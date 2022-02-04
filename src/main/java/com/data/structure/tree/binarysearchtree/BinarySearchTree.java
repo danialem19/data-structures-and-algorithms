@@ -27,8 +27,11 @@ public class BinarySearchTree
       newNode.data = obj;
       newNode.left = null;
       newNode.right = null;
-      if (root == null) { root = newNode; }
-      else { root.addNode(newNode); }
+      if (root == null) {
+         root = newNode;
+      } else {
+         root.addNode(newNode);
+      }
    }
 
    /**
@@ -155,31 +158,33 @@ public class BinarySearchTree
    }
 
    /**
-      A node of a tree stores a data item and references
-      to the left and right child nodes.
-   */
-   class Node
-   {  
+    * A node of a tree stores a data item and references
+    * to the left and right child nodes.
+    */
+   class Node {
       public Comparable data;
       public Node left;
       public Node right;
 
       /**
-         Inserts a new node as a descendant of this node.
-         @param newNode the node to insert
-      */
-      public void addNode(Node newNode)
-      {  
+       * Inserts a new node as a descendant of this node.
+       *
+       * @param newNode the node to insert
+       */
+      public void addNode(Node newNode) {
          int comp = newNode.data.compareTo(data);
-         if (comp < 0)
-         {  
-            if (left == null) { left = newNode; }
-            else { left.addNode(newNode); }
-         }
-         else if (comp > 0)
-         {  
-            if (right == null) { right = newNode; }
-            else { right.addNode(newNode); }
+         if (comp < 0) {
+            if (left == null) {
+               left = newNode;
+            } else {
+               left.addNode(newNode);
+            }
+         } else if (comp > 0) {
+            if (right == null) {
+               right = newNode;
+            } else {
+               right.addNode(newNode);
+            }
          }
       }
    }
